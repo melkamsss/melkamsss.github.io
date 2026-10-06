@@ -1,28 +1,129 @@
-<!-- PRODUCT ID -->
-<div class="product-id">
-  Product ID: GSSCS-001
-</div>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- 1D BARCODE -->
-<div class="barcode-title">
-  Scan to view this product
-</div>
+  <title>Golden Stainless Steel Charcoal Stove</title>
 
-<img
-  class="barcode"
-  src="https://barcode.tec-it.com/barcode.ashx?data=https%3A%2F%2Fmelkamsss.github.io%2F&code=Code128&translate-esc=on"
-  alt="Code 128 barcode"
->
+  <style>
+    body {
+      margin: 0;
+      padding: 30px 15px;
+      background: #f3f3f3;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-<div class="instruction">
-  Scan the 1D barcode with your phone camera or barcode scanner.
-</div>
+    .product-card {
+      max-width: 450px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+    }
 
-<!-- BUTTON -->
-<a
-  class="view-button"
-  href="https://melkamsss.github.io/"
-  target="_blank"
->
-  View Product
-</a>
+    .product-image {
+      width: 100%;
+      max-height: 350px;
+      object-fit: contain;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 25px;
+      margin: 10px 0 8px;
+      color: #222;
+    }
+
+    .product-id {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    .barcode-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* Traditional 1D Code 128 barcode */
+    .barcode {
+      width: 320px;
+      height: 100px;
+      object-fit: contain;
+      margin: auto;
+      display: block;
+    }
+
+    .instruction {
+      font-size: 14px;
+      color: #555;
+      margin: 10px 0 20px;
+    }
+
+    .view-button {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #222;
+      color: white;
+      text-decoration: none;
+      border-radius: 7px;
+      font-weight: bold;
+    }
+
+    .view-button:hover {
+      opacity: 0.85;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="product-card">
+
+    <!-- PRODUCT IMAGE -->
+    <img
+      class="product-image"
+      src="Golden Stainless steel charcoal stove.jpg"
+      alt="Golden Stainless steel charcoal stove"
+    >
+
+    <!-- PRODUCT NAME -->
+    <h1>
+      Golden Stainless steel charcoal stove
+    </h1>
+
+    <!-- PRODUCT ID -->
+    <div class="product-id">
+      Product ID: GSSCS-001
+    </div>
+
+    <!-- 1D BARCODE -->
+    <div class="barcode-title">
+      Scan to view this product
+    </div>
+
+    <img
+      class="barcode"
+      src="https://barcode.tec-it.com/barcode.ashx?data=https%3A%2F%2Fmelkamsss.github.io%2F&code=Code128&translate-esc=on"
+      alt="Code 128 barcode"
+    >
+
+    <!-- INSTRUCTION -->
+    <div class="instruction">
+      Scan the 1D barcode with a compatible barcode scanner.
+    </div>
+
+    <!-- BUTTON -
+```
