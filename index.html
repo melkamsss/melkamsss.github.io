@@ -1,5 +1,5 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -60,6 +60,15 @@
       display: block;
     }
 
+    /* Product name underneath barcode */
+    .barcode-product-name {
+      font-size: 15px;
+      font-weight: bold;
+      color: #222;
+      margin-top: 8px;
+      margin-bottom: 15px;
+    }
+
     .instruction {
       font-size: 14px;
       color: #555;
@@ -86,44 +95,68 @@
       color: #888;
     }
   </style>
+
 </head>
 
 <body>
 
   <div class="product-card">
 
-    <!-- PRODUCT IMAGE -->
-    <img
-      class="product-image"
-      src="Golden Stainless steel charcoal stove.jpg"
-      alt="Golden Stainless steel charcoal stove"
-    >
-
-    <!-- PRODUCT NAME -->
-    <h1>
-      Golden Stainless steel charcoal stove
-    </h1>
-
-    <!-- PRODUCT ID -->
-    <div class="product-id">
-      Product ID: GSSCS-001
-    </div>
-
-    <!-- 1D BARCODE -->
-    <div class="barcode-title">
-      Scan to view this product
-    </div>
-
-    <img
-      class="barcode"
-      src="https://barcode.tec-it.com/barcode.ashx?data=https%3A%2F%2Fmelkamsss.github.io%2F&code=Code128&translate-esc=on"
-      alt="Code 128 barcode"
-    >
-
-    <!-- INSTRUCTION -->
-    <div class="instruction">
-      Scan the 1D barcode with a compatible barcode scanner.
-    </div>
-
-    <!-- BUTTON -
 ```
+<!-- PRODUCT IMAGE -->
+<img
+  class="product-image"
+  src="Golden Stainless steel charcoal stove.jpg"
+  alt="Golden Stainless steel charcoal stove"
+>
+
+<!-- PRODUCT NAME -->
+<h1>
+  Golden Stainless steel charcoal stove
+</h1>
+
+<!-- PRODUCT ID -->
+<div class="product-id">
+  Product ID: GSSCS-001
+</div>
+
+<!-- 1D BARCODE -->
+<div class="barcode-title">
+  Scan to view this product
+</div>
+
+<img
+  class="barcode"
+  src="https://barcode.tec-it.com/barcode.ashx?data=https%3A%2F%2Fmelkamsss.github.io%2F&code=Code128&translate-esc=on"
+  alt="Code 128 barcode"
+>
+
+<!-- NAME UNDER BARCODE -->
+<div class="barcode-product-name">
+  Golden Stainless steel charcoal stove
+</div>
+
+<!-- INSTRUCTION -->
+<div class="instruction">
+  Scan the 1D barcode with a compatible barcode scanner.
+</div>
+
+<!-- BUTTON -->
+<a
+  class="view-button"
+  href="https://melkamsss.github.io/"
+  target="_blank"
+>
+  View Product
+</a>
+
+<!-- FOOTER -->
+<div class="footer">
+  Golden Stainless steel charcoal stove
+</div>
+```
+
+  </div>
+
+</body>
+</html>
