@@ -7,6 +7,10 @@
 
   <title>Golden Stainless Steel Charcoal Stove</title>
 
+  <!-- JsBarcode library for generating a traditional 1D Code 128 barcode -->
+
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+
   <style>
     body {
       margin: 0;
@@ -22,7 +26,7 @@
       padding: 25px;
       border-radius: 15px;
       text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
     }
 
     .product-image {
@@ -49,15 +53,23 @@
       font-size: 16px;
       font-weight: bold;
       margin-bottom: 10px;
+      color: #222;
+    }
+
+    /* Barcode container */
+    .barcode-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0 0;
     }
 
     /* Traditional 1D Code 128 barcode */
-    .barcode {
+    #barcode {
       width: 320px;
       height: 100px;
-      object-fit: contain;
-      margin: auto;
-      display: block;
+      max-width: 100%;
     }
 
     /* Product name underneath barcode */
@@ -120,16 +132,15 @@
   Product ID: GSSCS-001
 </div>
 
-<!-- 1D BARCODE -->
+<!-- BARCODE TITLE -->
 <div class="barcode-title">
   Scan to view this product
 </div>
 
-<img
-  class="barcode"
-  src="https://barcode.tec-it.com/barcode.ashx?data=https%3A%2F%2Fmelkamsss.github.io%2F&code=Code128&translate-esc=on&hide-text=true"
-  alt="Code 128 barcode"
->
+<!-- TRADITIONAL 1D CODE 128 BARCODE -->
+<div class="barcode-container">
+  <svg id="barcode"></svg>
+</div>
 
 <!-- PRODUCT NAME UNDER BARCODE -->
 <div class="barcode-product-name">
@@ -146,6 +157,7 @@
   class="view-button"
   href="https://melkamsss.github.io/"
   target="_blank"
+  rel="noopener noreferrer"
 >
   View Product
 </a>
@@ -157,6 +169,23 @@
 ```
 
   </div>
+
+  <script>
+    // URL stored inside the barcode
+    const productURL = "https://melkamsss.github.io/";
+
+    // Generate traditional 1D Code 128 barcode
+    // displayValue: false removes the URL/text underneath the barcode
+    JsBarcode("#barcode", productURL, {
+      format: "CODE128",
+      width: 2,
+      height: 90,
+      displayValue: false,
+      margin: 10,
+      background: "#ffffff",
+      lineColor: "#000000"
+    });
+  </script>
 
 </body>
 </html>
