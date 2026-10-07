@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Golden Stainless Steel Charcoal Stove</title>
 
-  <!-- JsBarcode library for generating a traditional 1D Code 128 barcode -->
+  <!-- Code 128 barcode generator -->
 
   <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
 
@@ -26,3 +27,205 @@
       padding: 25px;
       border-radius: 15px;
       text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .product-image {
+      width: 100%;
+      max-height: 350px;
+      object-fit: contain;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 25px;
+      margin: 10px 0 8px;
+      color: #222;
+    }
+
+    .product-id {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .barcode-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .barcode-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0 20px;
+    }
+
+    #barcode {
+      width: 320px;
+      max-width: 100%;
+      height: 100px;
+    }
+
+    .instruction {
+      font-size: 14px;
+      color: #555;
+      margin: 10px 0 20px;
+    }
+
+    .view-button {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #222;
+      color: white;
+      text-decoration: none;
+      border-radius: 7px;
+      font-weight: bold;
+    }
+
+    .view-button:hover {
+      opacity: 0.85;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* Only appears if the barcode cannot be generated */
+    .error {
+      display: none;
+      color: red;
+      font-size: 14px;
+      margin: 15px 0;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="product-card">
+
+```
+<!-- PRODUCT IMAGE -->
+
+<img
+  class="product-image"
+  src="Golden Stainless steel charcoal stove.jpg"
+  alt="Golden Stainless steel charcoal stove"
+>
+
+<!-- PRODUCT NAME -->
+
+<h1>
+  Golden Stainless steel charcoal stove
+</h1>
+
+<!-- SKU -->
+
+<div class="product-id">
+  SKU: <strong>GSSCS-001</strong>
+</div>
+
+<!-- BARCODE TITLE -->
+
+<div class="barcode-title">
+  Product Barcode
+</div>
+
+<!-- BARCODE -->
+
+<div class="barcode-container">
+
+  <svg id="barcode"></svg>
+
+</div>
+
+<!-- ERROR MESSAGE -->
+
+<div id="barcodeError" class="error">
+  Barcode could not be generated. Please refresh the page.
+</div>
+
+<!-- INSTRUCTION -->
+
+<div class="instruction">
+  Scan the barcode to enter the product SKU.
+</div>
+
+<!-- VIEW PRODUCT -->
+
+<a
+  class="view-button"
+  href="https://melkamsss.github.io/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  View Product
+</a>
+
+<!-- FOOTER -->
+
+<div class="footer">
+  Golden Stainless steel charcoal stove
+</div>
+```
+
+  </div>
+
+  <!-- BARCODE SCRIPT -->
+
+  <script>
+
+    // =====================================
+    // SKU
+    // =====================================
+
+    const productSKU = "GSSCS-001";
+
+
+    // =====================================
+    // CHECK IF BARCODE LIBRARY LOADED
+    // =====================================
+
+    if (typeof JsBarcode === "undefined") {
+
+      document.getElementById("barcodeError").style.display = "block";
+
+    } else {
+
+      // =====================================
+      // CREATE CODE 128 BARCODE
+      // =====================================
+
+      JsBarcode("#barcode", productSKU, {
+
+        format: "CODE128",
+
+        width: 2,
+
+        height: 90,
+
+        displayValue: false,
+
+        margin: 10,
+
+        background: "#ffffff",
+
+        lineColor: "#000000"
+
+      });
+
+    }
+
+  </script>
+
+</body>
+
+</html>
