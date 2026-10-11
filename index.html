@@ -1,82 +1,60 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GSSCS-001</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+    <title>Golden Stainless Steel Charcoal Stove</title>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 30px 10px;
-      background: #ffffff;
-      text-align: center;
-      font-family: Arial, sans-serif;
-    }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-    .barcode-container {
-      width: 100%;
-      max-width: 500px;
-      margin: 0 auto;
-    }
+    <style>
+        body {
+            margin: 0;
+            padding: 30px 10px;
+            background: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
 
-    #barcode {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+        #qrcode {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 25px auto;
+        }
 
-    .sku {
-      margin-top: 12px;
-      font-size: 22px;
-      font-weight: bold;
-      color: #000000;
-      letter-spacing: 2px;
-    }
-
-    @media print {
-      body {
-        padding: 10px;
-      }
-
-      .barcode-container {
-        max-width: 400px;
-      }
-    }
-  </style>
+        .sku {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-top: 15px;
+            color: #000000;
+        }
+    </style>
 </head>
 
 <body>
 
-  <div class="barcode-container">
-    <svg id="barcode" role="img"
-         aria-label="Code 128 barcode for SKU GSSCS-001"></svg>
+    <div id="qrcode"></div>
 
     <div class="sku">GSSCS-001</div>
-  </div>
 
-  <script>
-    window.addEventListener("load", function () {
-      if (typeof JsBarcode === "undefined") {
-        document.body.innerHTML =
-          "<p>Barcode library failed to load. Check your internet connection.</p>";
-        return;
-      }
+    <script>
+        const imageURL =
+            "https://melkamsss.github.io/Golden%20Stainless%20steel%20charcoal%20stove.jpg";
 
-      JsBarcode("#barcode", "GSSCS-001", {
-        format: "CODE128",
-        width: 2,
-        height: 100,
-        displayValue: false,
-        margin: 20,
-        background: "#ffffff",
-        lineColor: "#000000"
-      });
-    });
-  </script>
+        new QRCode(document.getElementById("qrcode"), {
+            text: imageURL,
+            width: 250,
+            height: 250,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.M
+        });
+    </script>
 
 </body>
 </html>
+```
