@@ -4,25 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Barcode - GSSCS-001</title>
 
-    <title>Golden Stainless Steel Charcoal Stove</title>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.6/JsBarcode.all.min.js"></script>
 
     <style>
         body {
             margin: 0;
             padding: 30px 10px;
-            background: #ffffff;
+            background: white;
             font-family: Arial, sans-serif;
             text-align: center;
         }
 
-        #qrcode {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 25px auto;
+        .barcode-container {
+            width: 100%;
+            max-width: 650px;
+            margin: 30px auto;
+        }
+
+        #barcode {
+            display: block;
+            width: 100%;
+            height: auto;
         }
 
         .sku {
@@ -30,31 +34,46 @@
             font-weight: bold;
             letter-spacing: 2px;
             margin-top: 15px;
-            color: #000000;
+        }
+
+        .note {
+            font-size: 13px;
+            color: #555;
+        }
+
+        @media print {
+            body {
+                padding: 10px;
+            }
+
+            .note {
+                display: none;
+            }
         }
     </style>
 </head>
 
 <body>
-
-    <div id="qrcode"></div>
-
-    <div class="sku">GSSCS-001</div>
+    <div class="barcode-container">
+        <svg id="barcode"></svg>
+        <div class="sku">GSSCS-001</div>
+        <p class="note">Code 128 product barcode</p>
+    </div>
 
     <script>
-        const imageURL =
-            "https://melkamsss.github.io/Golden%20Stainless%20steel%20charcoal%20stove.jpg";
+        const productURL =
+            "https://melkamsss.github.io/product.html";
 
-        new QRCode(document.getElementById("qrcode"), {
-            text: imageURL,
-            width: 250,
-            height: 250,
-            colorDark: "#000000",
-            colorLight: "#ffffff",
-            correctLevel: QRCode.CorrectLevel.M
+        JsBarcode("#barcode", productURL, {
+            format: "CODE128",
+            width: 2,
+            height: 100,
+            displayValue: false,
+            margin: 12,
+            background: "#ffffff",
+            lineColor: "#000000"
         });
     </script>
-
 </body>
 </html>
 ```
