@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Product Barcode - GSSCS-001</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.6/JsBarcode.all.min.js"></script>
@@ -12,14 +13,14 @@
         body {
             margin: 0;
             padding: 30px 10px;
-            background: white;
+            background: #ffffff;
             font-family: Arial, sans-serif;
             text-align: center;
         }
 
         .barcode-container {
             width: 100%;
-            max-width: 650px;
+            max-width: 700px;
             margin: 30px auto;
         }
 
@@ -30,20 +31,25 @@
         }
 
         .sku {
+            margin-top: 15px;
             font-size: 22px;
             font-weight: bold;
             letter-spacing: 2px;
-            margin-top: 15px;
+            color: #000000;
         }
 
         .note {
             font-size: 13px;
-            color: #555;
+            color: #555555;
         }
 
         @media print {
             body {
                 padding: 10px;
+            }
+
+            .barcode-container {
+                max-width: 650px;
             }
 
             .note {
@@ -54,11 +60,14 @@
 </head>
 
 <body>
-    <div class="barcode-container">
+
+    <main class="barcode-container">
         <svg id="barcode"></svg>
+
         <div class="sku">GSSCS-001</div>
-        <p class="note">Code 128 product barcode</p>
-    </div>
+
+        <p class="note">Code 128 Product Barcode</p>
+    </main>
 
     <script>
         const productURL =
@@ -69,11 +78,12 @@
             width: 2,
             height: 100,
             displayValue: false,
-            margin: 12,
+            margin: 15,
             background: "#ffffff",
             lineColor: "#000000"
         });
     </script>
+
 </body>
 </html>
 ```
