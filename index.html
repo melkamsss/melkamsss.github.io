@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,41 +11,72 @@
   <style>
     body {
       margin: 0;
-      padding: 30px;
-      background: white;
+      padding: 30px 10px;
+      background: #ffffff;
       text-align: center;
       font-family: Arial, sans-serif;
     }
 
+    .barcode-container {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
     #barcode {
-      width: 400px;
-      max-width: 90%;
-      height: 140px;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .sku {
+      margin-top: 12px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #000000;
+      letter-spacing: 2px;
+    }
+
+    @media print {
+      body {
+        padding: 10px;
+      }
+
+      .barcode-container {
+        max-width: 400px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <svg id="barcode"></svg>
+  <div class="barcode-container">
+    <svg id="barcode" role="img"
+         aria-label="Code 128 barcode for SKU GSSCS-001"></svg>
+
+    <div class="sku">GSSCS-001</div>
+  </div>
 
   <script>
-    window.onload = function () {
+    window.addEventListener("load", function () {
+      if (typeof JsBarcode === "undefined") {
+        document.body.innerHTML =
+          "<p>Barcode library failed to load. Check your internet connection.</p>";
+        return;
+      }
+
       JsBarcode("#barcode", "GSSCS-001", {
         format: "CODE128",
-        width: 3,
-        height: 120,
-        displayValue: true,
-        text: "GSSCS-001",
-        fontSize: 20,
-        textMargin: 8,
+        width: 2,
+        height: 100,
+        displayValue: false,
         margin: 20,
         background: "#ffffff",
         lineColor: "#000000"
       });
-    };
+    });
   </script>
 
 </body>
 </html>
-```
